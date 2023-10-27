@@ -1,13 +1,16 @@
 import React from 'react'
 import "./MovieCard.css"
-function MovieCard({title, year, rating, url}) {
+import {Link} from "react-router-dom"
+function MovieCard({title, year, rating, trailer, id}) {
   return (
+    <Link to={`/movies/${id}`} >
     <div className='container'>
-        <img src={url} alt="" />
+        <iframe src={trailer}allowFullScreen/>
         <h2>{title}</h2>
         <p> {year}</p>
         <p>Rating:{rating}</p>
     </div>
+    </Link>
   )
 }
 
